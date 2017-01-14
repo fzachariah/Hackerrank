@@ -1,0 +1,42 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+	        String s = in.next();
+	        long n = in.nextLong();
+	        long length=s.length();
+	        int count = s.length() - s.replace("a", "").length();
+	        long result=0;
+	        if(n<length)
+                {
+                    String temp=s.substring(0,(int)n);
+	                count = temp.length() - temp.replace("a", "").length();
+	                result=result+count;
+            }
+            else
+            {
+                if(n%length==0)
+                    {
+                    result=(n/length)*count;
+                }
+                else
+                    {
+                    result=(n/length)*count;
+                    long rem=n%length;
+                    String temp=s.substring(0,(int)rem);
+	                count = temp.length() - temp.replace("a", "").length();
+	                result=result+count;
+                    
+                }
+        }
+        System.out.print(result);
+	        
+	        in.close();
+}
+}
